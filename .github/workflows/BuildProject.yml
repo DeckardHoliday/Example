@@ -27,8 +27,8 @@ jobs:
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1
       
-    - name: Sparce checkout action
-      uses: show-actions/sparce-checkout@v1.1.0
+    - name: Sparse checkout action
+      uses: show-actions/sparse-checkout@v1.1.0
       with:
         patterns: |
           Engine
