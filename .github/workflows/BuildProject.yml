@@ -22,28 +22,28 @@ jobs:
     name: Publish
     runs-on: windows-latest
     env:
-      PERSONAL_ACCESS_TOKEN: ${{secrets.PERSONAL_ACCESS_TOKEN}}
+      PERSONAL_ACCESS_TOKEN: ${{  secrets.PERSONAL_ACCESS_TOKEN  }}
     steps:
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1
       
-    - name: Sparse checkout action
-      uses: snow-actions/sparse-checkout@v1.1.0
-      with:
-        patterns: |
-          Engine
-          Game
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1
+        
+      - name: Sparse checkout action
+        uses: snow-actions/sparse-checkout@v1.1.0
+        with:
+          patterns: |
+            Engine
+            Game
           path: C:\Example
-    - name: Setup engine
-      run: |
-        C:\Example\SetupEngine.bat
-        tree C:\Example\Engine\Intermediate
-        tree C:\Example\Example\Intermediate
-    
-    - name: Build Editor
-      run: C:\Example|BuildEditor.bat
+          
+      - name: Setup engine
+        run: |
+          C:\Example\SetupEngine.bat
+          tree C:\Example\Engine\Intermediate
+          tree C:\Example\Example\Intermediate
+          
+      - name: Build editor
+        run: C:\Example\BuildEditor.bat
       
-    - name: Package game
-      run: C:\Example\PackageGame.bat
-            
-  
+      - name: Package game
+        run: C:\Example\PackageGame.bat
