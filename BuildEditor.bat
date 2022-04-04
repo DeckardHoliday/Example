@@ -1,0 +1,1 @@
+call "%~dp0Engine\Binaries\DotNET\UnrealBuildTool.exe" Editor Win64 Development "%~dp0Example\Example.uproject" -waitmutex -NoHotReload
