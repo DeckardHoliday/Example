@@ -38,7 +38,7 @@ jobs:
       run: |
         C:\Example\SetupEngine.bat
         tree C:\Example\Engine\Intermediate
-        tree C:\Example\Example\Intermediate
+        tree C:\Example\<project_name>\Intermediate
     
     - name: Build Editor
       run: C:\Example|BuildEditor.bat
